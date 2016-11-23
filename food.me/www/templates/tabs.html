@@ -1,0 +1,34 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+
+<ion-side-menus>
+
+    <ion-side-menu side="right" expose-aside-when="large">
+        <ion-nav-view name="tab-cart"></ion-nav-view>
+    </ion-side-menu>
+
+    <ion-side-menu-content>
+        <ion-tabs class="tabs-icon-top tabs-color-active-positive">
+             <ion-tab title="Recomendados" icon-off="ion-fork" icon-on="ion-fork" href="#/tab/recomendados">
+                <ion-nav-view name="tab-recomendados"></ion-nav-view>
+              </ion-tab>
+
+              <ion-tab title="Carnes" icon-off="ion-fork" icon-on="ion-fork" href="#/tab/carne">
+                <ion-nav-view name="tab-carne"></ion-nav-view>
+              </ion-tab>
+              <ion-tab title="Peixes" icon-off="ion-fork" icon-on="ion-fork" href="#/tab/peixe">
+                <ion-nav-view name="tab-peixe"></ion-nav-view>
+              </ion-tab>
+
+               <ion-tab title="Pizzas" icon-off="ion-fork" icon-on="ion-fork" href="#/tab/pizza">
+                    <ion-nav-view name="tab-pizza"></ion-nav-view>
+                </ion-tab>
+
+
+        </ion-tabs>
+
+    </ion-side-menu-content>
+</ion-side-menus>
