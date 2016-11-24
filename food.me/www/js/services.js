@@ -3,7 +3,7 @@ angular.module('starter.services', [])
         var users = [{
             id: 0,
             name: 'Jose Alcino',
-            check: 9.99,
+            check: 0,
         }];
         return {
             all: function () {
@@ -154,7 +154,7 @@ angular.module('starter.services', [])
         getById: function (foodId) {
             for (var i = 0; i < foods.length; i++) {
                 if (foods[i].id === parseInt(foodId)) {
-                    return foodId[i];
+                    return foods[i];
                 }
             }
             return null;
@@ -169,4 +169,28 @@ angular.module('starter.services', [])
             return list;
         },
     };
+})
+
+.factory('Ingredients', function () {
+    var ingredients = [{
+        id: 0,
+        name: "Bacon"
+    },
+    {
+        id: 1,
+        name: "Extra Cheese"
+    },
+    {
+        id: 2,
+        name: "Espargus"
+    },
+    {
+        id: 3,
+        name: "Orange"
+    }];
+    return {
+        all: function () {
+            return ingredients;
+        },
+    }
 });

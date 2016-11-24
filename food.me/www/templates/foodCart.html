@@ -3,11 +3,14 @@
         <h2>FOODCART</h2>
         <ion-list>
             <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="check in checks" type="item-text-wrap">
+                <img ng-src="img/user.png">
                 <!-- href="#/tab/chats/{{check.id}}" -->
                 <h2>{{check.name}}</h2>
                 <p>{{check.check}}€</p>
-                <i class="icon ion-chevron-right icon-accessory"></i>
             </ion-item>
         </ion-list>
+        <button class="button button-block button-calm" ng-click="utilities()">Utilities</button>
+        <button class="button button-block button-calm">Finalizar Pedido</button>
     </ion-content>
+    
 </ion-view>

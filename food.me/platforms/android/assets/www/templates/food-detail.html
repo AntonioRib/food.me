@@ -1,11 +1,25 @@
-﻿<ion-view view-title="{{food.name}}">
+﻿
+<ion-view view-title="{{food.name}}">
     <ion-content class="padding">
-        <img ng-src="{{food.img}}" style="width: 64px; height: 64px">
-        <p>
-            {{food.description}}
-        </p>
-        <p>
-            {{food.price}}
-        </p>
+        <div>
+            <div style="float:left">
+                <img ng-src="{{food.img}}" style="width: 200px; height: 200px; margin-right: 50px;">
+            </div>
+            <div>
+                <h1>{{food.name}}</h1>
+                <h3>{{food.description}} </h3>
+                <h2>{{food.price}} EUR</h2>
+                <button class="button button-full button-positive" ng-click="ask()"> Pedir </button>
+            </div>
+        </div>
+        <br />
+        <div ng-controller="ChangePriceCtrl">
+            <ion-list ng-repeat="ingredient in food.ingredients" type="item-text-wrap">
+                <ion-checkbox ng-model="isChecked" ng-change="checkedOrNot(isChecked)" ng-init='isChecked=true'>{{ingredient}}</ion-checkbox>
+            </ion-list>
+            <ion-list ng-repeat="ingredient in ingredients" type="item-text-wrap">
+                <ion-checkbox ng-model="isChecked" ng-change="checkedOrNot(isChecked)" ng-init='isChecked=false'>{{ingredient.name}}</ion-checkbox>
+            </ion-list>
+        </div>
     </ion-content>
 </ion-view>
