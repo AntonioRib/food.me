@@ -5,6 +5,26 @@ angular.module('starter.controllers', [])
         $scope.utilities = function () {
             $state.go('tab.utilities');
         }
+        $scope.startPayment = function () {
+            $state.go('payment');
+        }
+    })
+    .controller('PaymentCtrl', function ($scope, $state, $ionicHistory) {
+        $scope.checks = checks;
+        $scope.payWhat = function () {
+            $state.go('paymentWhat');
+        };
+        $scope.paymentMethods = function () {
+            $state.go('paymentMethods');
+        }
+        $scope.end = function () {
+            $state.go('end');
+        }
+        $scope.restart = function () {
+            checks = []
+            $scope.checks = checks
+            $ionicHistory.clearCache().then(function () { $state.go('login') })
+        }
     })
         .controller('RecomendadosCtrl', function ($scope, Foods) {
             $scope.title = "Recomendados"
@@ -48,7 +68,7 @@ angular.module('starter.controllers', [])
         .controller('LoginNameCtrl', function ($scope, $state) {
             $scope.data = {};
             $scope.log = function () {
-                 var user = {
+                var user = {
                     id: 0,
                     name: $scope.data.username,
                     check: 0,
@@ -81,3 +101,12 @@ angular.module('starter.controllers', [])
     $scope.chat = Chats.get($stateParams.chatId);
 });
 
+var fastForward = function () {
+    alert('Pedido feito. O empregado vem, e serve a comida. Entretanto enquanto espera tambem poderia utilizar um pouco mais as utilities');
+    document.getElementById("askBtn").innerHTML = "Pedir Novamente";
+    document.getElementById("paymentBtn").style.display = '';
+}
+
+var finalize = function () {
+    alert('Aparecera a forma proprietaria de pagar. Conforme o escolhido. E o cliente podera ir ao balcao pagar (caso seja dinheiro) / seguir as instrucoes no leitor (caso seja multibanco) / as formas das outras opcoes.');
+}

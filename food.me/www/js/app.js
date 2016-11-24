@@ -49,6 +49,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                templateUrl: 'templates/loginName.html',
                controller: "LoginNameCtrl"
            })
+           .state('payment', {
+               url: '/payment',
+               templateUrl: 'templates/payment.html',
+               controller: "PaymentCtrl"
+           })
+           .state('paymentWhat', {
+               url: '/paymentWhat',
+               templateUrl: 'templates/paymentWhat.html',
+               controller: "PaymentCtrl"
+           })
+           .state('paymentMethods', {
+               url: '/paymentMethods',
+               templateUrl: 'templates/paymentMethods.html',
+               controller: "PaymentCtrl"
+           })
+           .state('end', {
+               url: '/end',
+               templateUrl: 'templates/end.html',
+               controller: "PaymentCtrl"
+           })
            .state('tab.cart', {
                url: '/cart',
                views: {
@@ -111,30 +131,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                      controller: 'UtilitiesCtrl'
                  }
              }
-         })
-
-
-
-    .state('tab.chats', {
-        url: '/chats',
-        views: {
-            'tab-chats': {
-                templateUrl: 'templates/tab-chats.html',
-                controller: 'ChatsCtrl'
-            }
-        }
-    })
-      .state('tab.chat-detail', {
-          url: '/chats/:chatId',
-          views: {
-              'tab-chats': {
-                  templateUrl: 'templates/chat-detail.html',
-                  controller: 'ChatDetailCtrl'
-              }
-          }
-      });
+         });
 
     // if none of the above states are matched, use this as the fallback
-    //$urlRouterProvider.otherwise('/tab/cart');
     $urlRouterProvider.otherwise('/login');
 });

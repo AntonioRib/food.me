@@ -10,7 +10,8 @@
             </ion-item>
         </ion-list>
         <button class="button button-block button-calm" ng-click="utilities()">Utilities</button>
-        <button class="button button-block button-calm">Finalizar Pedido</button>
+        <button class="button button-block button-calm" onclick="fastForward()" id="askBtn">Finalizar Pedido</button>
+        <button class="button button-block button-calm" id="paymentBtn" style="display:none" ng-click="startPayment()">Pagar</button>
     </ion-content>
     
 </ion-view>
