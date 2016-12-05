@@ -2,19 +2,19 @@
     <ion-content class="padding">
         <h2>Metodo de pagamento</h2>
         <ion-list>
-            <ion-radio class="item-remove-animate" type="item-text-wrap">
+            <ion-radio class="item-remove-animate" type="item-text-wrap" ng-model="paymentChoice" ng-value="'Money'">
                 DINHEIRO
             </ion-radio>
-            <ion-radio class="item-remove-animate" type="item-text-wrap">
+            <ion-radio class="item-remove-animate" type="item-text-wrap" ng-model="paymentChoice" ng-value="'MB'">
                 MULTIBANCO
             </ion-radio>
-            <ion-radio class="item-remove-animate" type="item-text-wrap">
+            <ion-radio class="item-remove-animate" type="item-text-wrap" ng-model="paymentChoice" ng-value="'Paypal'">
                 PAYPAL
             </ion-radio>
-            <ion-radio class="item-remove-animate" type="item-text-wrap">
+            <ion-radio class="item-remove-animate" type="item-text-wrap" ng-model="paymentChoice" ng-value="'MBnet'">
                 MBNET
             </ion-radio>
-            <ion-radio class="item-remove-animate" type="item-text-wrap">
+            <ion-radio class="item-remove-animate" type="item-text-wrap" ng-model="paymentChoice" ng-value="'NFC'">
                 NFC
             </ion-radio>
         </ion-list>

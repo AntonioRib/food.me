@@ -25,18 +25,40 @@ angular.module('starter.controllers', [])
             $scope.checks = checks
             $ionicHistory.clearCache().then(function () { $state.go('login') })
         }
+        var numberOfSelected = 0;
+        $scope.changeNumberSelected = function (selected) {
+            if(selected)
+                numberOfSelected++
+            else
+                numberOfSelected--
+        }
+        $scope.numberSelected = function () {
+            return numberOfSelected == 0
+        }
+
+        var paymentsSelected = 0;
+        $scope.changePaymentsSelected = function (selected) {
+            if (selected)
+                paymentsSelected++
+            else
+                paymentsSelected--
+        }
+        $scope.paymentsSelected = function () {
+            return paymentsSelected == 0
+        }
+        $scope.paymentChoice = 'Money'
     })
         .controller('RecomendadosCtrl', function ($scope, Foods) {
-            $scope.title = "Recomendados"
-            $scope.foods = Foods.getByCategory("Recomendados");
+            $scope.title = "Recommended"
+            $scope.foods = Foods.getByCategory("Recommended");
         })
         .controller('CarneCtrl', function ($scope, Foods) {
-            $scope.title = "Carnes"
-            $scope.foods = Foods.getByCategory("Carnes");
+            $scope.title = "Meat"
+            $scope.foods = Foods.getByCategory("Meat");
         })
         .controller('PeixeCtrl', function ($scope, Foods) {
-            $scope.title = "Peixes"
-            $scope.foods = Foods.getByCategory("Peixes");
+            $scope.title = "Fish"
+            $scope.foods = Foods.getByCategory("Fish");
         })
         .controller('PizzaCtrl', function ($scope, Foods) {
             $scope.title = "Pizzas"
@@ -46,6 +68,7 @@ angular.module('starter.controllers', [])
             $scope.ingredients = Ingredients.all();
             $scope.food = Foods.getById($stateParams.foodId);
             $scope.ask = function () {
+                //TODO need to change this to have all the foods ordered
                 checks[0].check += $scope.food.price
                 $state.go('tab.recomendados');
             }
@@ -80,26 +103,6 @@ angular.module('starter.controllers', [])
         .controller("UtilitiesCtrl", function ($scope) {
         })
 
-
-
-.controller('ChatsCtrl', function ($scope, Chats) {
-    // With the new view caching in Ionic, Controllers are only called
-    // when they are recreated or on app start, instead of every page change.
-    // To listen for when this page is active (for example, to refresh data),
-    // listen for the $ionicView.enter event:
-    //
-    //$scope.$on('$ionicView.enter', function(e) {
-    //});
-
-    $scope.chats = Chats.all();
-    $scope.remove = function (chat) {
-        Chats.remove(chat);
-    };
-})
-
-.controller('ChatDetailCtrl', function ($scope, $stateParams, Chats) {
-    $scope.chat = Chats.get($stateParams.chatId);
-});
 
 var fastForward = function () {
     alert('Pedido feito. O empregado vem, e serve a comida. Entretanto enquanto espera tambem poderia utilizar um pouco mais as utilities');

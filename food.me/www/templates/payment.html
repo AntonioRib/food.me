@@ -1,15 +1,14 @@
 ﻿<ion-view view-title="FoodCart">
     <ion-content class="padding">
-        <h2>Quem vai pagar?</h2>
+        <h2>Who is going to pay?</h2>
         <ion-list ng-repeat="check in checks">
-            <ion-checkbox class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+            <ion-checkbox class="item-remove-animate item-avatar item-icon-right" ng-model="checked" ng-change="changeNumberSelected(checked)" type="item-text-wrap">
                 <img ng-src="img/user.png">
-                <!-- href="#/tab/chats/{{check.id}}" -->
                 <h2>{{check.name}}</h2>
                 <p>{{check.check}}€</p>
             </ion-checkbox>
         </ion-list>
-        <button class="button button-block button-calm" ng-click="payWhat()">O que vai pagar? ></button>
+        <button class="button button-block button-calm" ng-disabled="numberSelected()" ng-click="payWhat()">What will you pay? ></button>
     </ion-content>
 
 </ion-view>

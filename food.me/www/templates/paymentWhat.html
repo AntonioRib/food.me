@@ -2,14 +2,13 @@
     <ion-content class="padding">
         <h2>O que vai pagar?</h2>
         <ion-list ng-repeat="check in checks">
-            <ion-checkbox class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap">
+            <ion-checkbox class="item-remove-animate item-avatar item-icon-right" ng-model="checked" ng-change="changePaymentsSelected(checked)" type="item-text-wrap">
                 <img ng-src="img/user.png">
-                <!-- href="#/tab/chats/{{check.id}}" -->
                 <h2>{{check.name}}</h2>
                 <p>{{check.check}}€</p>
             </ion-checkbox>
         </ion-list>
-        <button class="button button-block button-calm" ng-click="paymentMethods()">Pagar ></button>
+        <button class="button button-block button-calm" ng-disabled="paymentsSelected()" ng-click="paymentMethods()">Pagar ></button>
     </ion-content>
 
 </ion-view>
