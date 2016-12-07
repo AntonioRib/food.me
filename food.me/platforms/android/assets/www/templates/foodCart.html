@@ -6,12 +6,16 @@
                 <img ng-src="img/user.png">
                 <!-- href="#/tab/chats/{{check.id}}" -->
                 <h2>{{check.name}}</h2>
-                <p>{{check.check}}€</p>
+                <p>{{check.totalToPay}} EUR</p>
+                <h3>Order:</h3>
+                <ion-list ng-repeat="food in check.foodOrdered track by $index">
+                    <p> - {{food}} EUR</p>
+                </ion-list>
             </ion-item>
         </ion-list>
         <button class="button button-block button-calm" ng-click="utilities()">Utilities</button>
-        <button class="button button-block button-calm" onclick="fastForward()" id="askBtn">Finalizar Pedido</button>
-        <button class="button button-block button-calm" id="paymentBtn" style="display:none" ng-click="startPayment()">Pagar</button>
+        <button class="button button-block button-calm" onclick="fastForward()" id="askBtn">Finalize Order</button>
+        <button class="button button-block button-calm" id="paymentBtn" style="display:none" ng-click="startPayment()">Pay</button>
     </ion-content>
     
 </ion-view>

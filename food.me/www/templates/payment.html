@@ -5,7 +5,11 @@
             <ion-checkbox class="item-remove-animate item-avatar item-icon-right" ng-model="checked" ng-change="changeNumberSelected(checked)" type="item-text-wrap">
                 <img ng-src="img/user.png">
                 <h2>{{check.name}}</h2>
-                <p>{{check.check}}€</p>
+                <p>Total: {{check.totalToPay}} EUR</p>
+                <h3>Order:</h3>
+                <ion-list ng-repeat="food in check.foodOrdered track by $index">
+                    <p>{{food}} EUR</p>
+                </ion-list>
             </ion-checkbox>
         </ion-list>
         <button class="button button-block button-calm" ng-disabled="numberSelected()" ng-click="payWhat()">What will you pay? ></button>

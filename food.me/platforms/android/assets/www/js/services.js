@@ -27,7 +27,7 @@ angular.module('starter.services', [])
         description: 'A nice burguer',
         price: 7.99,
         categories: ['Recommended', 'Meat'],
-        ingredients: ['Pao', 'Carne', 'Alface']
+        ingredients: ['Bread', 'Meat', 'Lettuce']
     },
     {
         id: 1,
@@ -36,7 +36,7 @@ angular.module('starter.services', [])
         description: 'A nice premium burguer',
         price: 9.99,
         categories: ['Recommended', 'Meat'],
-        ingredients: ['Pao', 'Carne', 'Ovo', 'Alface']
+        ingredients: ['Bread', 'Meat', 'Egg', 'Lettuce']
     },
     {
         id: 2,
@@ -45,7 +45,7 @@ angular.module('starter.services', [])
         description: 'versatile, and crazy tasty? Skirt steak. It also cooks in a flash, which make it tailor-made for grilling.',
         price: 7.99,
         categories: ['Meat'],
-        ingredients: ['Sal', 'Pimenta', 'Bife']
+        ingredients: ['Salt', 'Pepper', 'Meat']
     },
 {
     id: 3,
@@ -54,34 +54,34 @@ angular.module('starter.services', [])
     description: 'This classic chicken Schnitzel recipe sounds harder to make than it is. Plus, you get to pound out the days stress.',
     price: 5.35,
     categories: ['Recommended', 'Meat'],
-    ingredients: ['Galinha', 'Sal', 'Pimenta', 'Ovo', 'Mostarda']
+    ingredients: ['Chicken', 'Salt', 'Pepper', 'Egg', 'Mustard']
 },
 {
     id: 4,
     name: 'Parmesan Chicken Cutlets',
     img: 'img/meat.jpg',
-    description: 'If you cut the chicken into smaller pieces before breading, they’re nuggets—the guilt-free kind.',
+    description: 'If you cut the chicken into smaller pieces before breading, theyre nuggets, the guilt-free kind.',
     price: 7.99,
     categories: ['Meat'],
-    ingredients: ['Galinha', 'Sal', 'Pimenta', 'Ovo', 'Mostarda']
+    ingredients: ['Chicken', 'Salt', 'Pepper', 'Egg', 'Mustard']
 },
 {
     id: 5,
     name: 'Slow-Roasted Salmon',
     img: 'img/fish.jpg',
-    description: 'Slow-Roasted Salmon With Fennel, Citrus, And Chiles Don’t bother trying to divide this fillet into tidy portions. Instead, use a spoon to break it into perfectly imperfect pieces.',
+    description: 'Slow-Roasted Salmon With Fennel, Citrus, And Chiles Dont bother trying to divide this fillet into tidy portions. Instead, use a spoon to break it into perfectly imperfect pieces.',
     price: 9.99,
     categories: ['Recommended', 'Fish'],
-    ingredients: ['Salmao', 'Laranja', 'Limao', 'Sal']
+    ingredients: ['Salmon', 'Orange', 'Lemon', 'Salt']
 },
 {
     id: 6,
     name: 'Baked Sardines in Pepperonata',
     img: 'img/fish.jpg',
-    description: 'Baked Sardines In Pepperonata “If you don’t like sardines,” says Gjelina chef Travis Lett, “you’re going to today.” Make sure to ask your fishmonger to remove the center bones for these baked sardines but leave the head and tail intact and serve over pepperonata.',
+    description: 'If you dont like sardines, says Gjelina chef Travis Lett, youre going to today. Make sure to ask your fishmonger to remove the center bones for these baked sardines but leave the head and tail intact and serve over pepperonata.',
     price: 8.99,
     categories: ['Fish'],
-    ingredients: ['Sardinhas', 'Pimento Vermelho', 'Vinho branco']
+    ingredients: ['Sardines', 'Red Pepper', 'White wine']
 },
 {
     id: 7,
@@ -90,7 +90,7 @@ angular.module('starter.services', [])
     description: 'Instead of using canned tuna, this recipe puts you in control of the quality of the tuna and how long to cook it. We like it on the medium-rare side.',
     price: 7.99,
     categories: ['Fish'],
-    ingredients: ['Atum', 'Feijao', 'Azeite']
+    ingredients: ['Tuna', 'Beans', 'Olive oil']
 },
 {
     id: 8,
@@ -99,7 +99,7 @@ angular.module('starter.services', [])
     description: 'Stir-Fried Grains With Shrimp And Eggs Make extra grains on Sunday and use them for this lightning-quick weeknight dinner.',
     price: 14.99,
     categories: ['Fish'],
-    ingredients: ['Camarao', 'Ovo', 'Soja']
+    ingredients: ['Shrimp', 'Egg', 'Soy']
 },
 {
     id: 9,
@@ -108,7 +108,7 @@ angular.module('starter.services', [])
     description: 'Simple pizza',
     price: 5.99,
     categories: ['Recommended', 'Pizzas'],
-    ingredients: ['Pao', 'Tomate', 'Queijo']
+    ingredients: ['Bread', 'Tomato', 'Cheese']
 },
 {
     id: 10,
@@ -117,7 +117,7 @@ angular.module('starter.services', [])
     description: 'Indulge in a bit of pizza at home during the week with this delicious dish that is ready in a flash.',
     price: 8.99,
     categories: ['Pizzas'],
-    ingredients: ['Pao', 'Tomate', 'Queijo', 'Ovo']
+    ingredients: ['Bread', 'Tomato', 'Cheese', 'Egg']
 },
 {
     id: 11,
@@ -126,7 +126,7 @@ angular.module('starter.services', [])
     description: 'Meat lovers unite with these tasty 20-minute pizzas loaded with crispy bacon, chorizo, onion and cheese.',
     categories: ['Recommended', 'Pizzas', 'Meat'],
     price: 7.99,
-    ingredients: ['Pao', 'Tomate', 'Queijo', 'Carne']
+    ingredients: ['Bread', 'Tomato', 'Cheese', 'Meat']
 },
 {
     id: 12,
@@ -135,7 +135,7 @@ angular.module('starter.services', [])
     description: 'Each slice is piled with toppings from your favorite sandwich',
     price: 7.99,
     categories: ['Recommended', 'Pizzas', 'Meat'],
-    ingredients: ['Pao', 'Tomate', 'Queijo', 'Carne']
+    ingredients: ['Bread', 'Tomato', 'Cheese', 'Meat']
 },
 {
     id: 13,
@@ -144,7 +144,7 @@ angular.module('starter.services', [])
     description: 'Preheat a cookie sheet in a hot oven: This turns it into a baking stone for perfect pizza crust.',
     price: 6.99,
     categories: ['Pizzas', 'Fish'],
-    ingredients: ['Pao', 'Tomate', 'Queijo', 'Anchovas']
+    ingredients: ['Bread', 'Tomato', 'Cheese', 'Anchovy']
 }];
 
     return {

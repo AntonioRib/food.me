@@ -68,9 +68,11 @@ angular.module('starter.controllers', [])
             $scope.ingredients = Ingredients.all();
             $scope.food = Foods.getById($stateParams.foodId);
             $scope.ask = function () {
-                //TODO need to change this to have all the foods ordered
-                checks[0].check += $scope.food.price
-                $state.go('tab.recomendados');
+                if(confirm("Unfortunately there is no user feature way of removing food your order (yet). If you need to remove anything from your order go on the Utilities tab call a waiter and ask him")){
+                    checks[0].totalToPay += $scope.food.price
+                    checks[0].foodOrdered.push($scope.food.name + " - " + $scope.food.price);
+                    $state.go('tab.recomendados');
+                } else {}
             }
         })
         .controller('ChangePriceCtrl', function ($scope, $stateParams, Foods, Ingredients) {
@@ -94,7 +96,8 @@ angular.module('starter.controllers', [])
                 var user = {
                     id: 0,
                     name: $scope.data.username,
-                    check: 0,
+                    totalToPay: 0,
+                    foodOrdered: [],
                 }
                 checks.push(user)
                 $state.go('tab.cart');
@@ -105,11 +108,13 @@ angular.module('starter.controllers', [])
 
 
 var fastForward = function () {
-    alert('Pedido feito. O empregado vem, e serve a comida. Entretanto enquanto espera tambem poderia utilizar um pouco mais as utilities');
-    document.getElementById("askBtn").innerHTML = "Pedir Novamente";
-    document.getElementById("paymentBtn").style.display = '';
+    if (confirm("If you decide to finalize your order you will have to pay for what you ordered. Are you sure you want to order?")) {
+        alert('Order made. The waiter comes and serves the meal. Meanwhile, while you wait you could also use our utilities.');
+        document.getElementById("askBtn").innerHTML = "Order Again";
+        document.getElementById("paymentBtn").style.display = '';
+    } else {}
 }
 
 var finalize = function () {
-    alert('Aparecera a forma proprietaria de pagar. Conforme o escolhido. E o cliente podera ir ao balcao pagar (caso seja dinheiro) / seguir as instrucoes no leitor (caso seja multibanco) / as formas das outras opcoes.');
+    alert('Propietary forms of paying according to the method chosen. The client could go to the balcony and pay (if money is chosen) / follow instructions on the screen (if Card is chosen) / And the same for the other methods of payment.');
 }

@@ -1,24 +1,24 @@
 ﻿<ion-view view-title="FoodCart">
     <ion-content class="padding">
-        <h2>Metodo de pagamento</h2>
+        <h2>Payment Methods</h2>
         <ion-list>
             <ion-radio class="item-remove-animate" type="item-text-wrap" ng-model="paymentChoice" ng-value="'Money'">
-                DINHEIRO
+                Money
             </ion-radio>
             <ion-radio class="item-remove-animate" type="item-text-wrap" ng-model="paymentChoice" ng-value="'MB'">
-                MULTIBANCO
+                Card
             </ion-radio>
             <ion-radio class="item-remove-animate" type="item-text-wrap" ng-model="paymentChoice" ng-value="'Paypal'">
-                PAYPAL
+                Paypal
             </ion-radio>
             <ion-radio class="item-remove-animate" type="item-text-wrap" ng-model="paymentChoice" ng-value="'MBnet'">
-                MBNET
+                MBNet
             </ion-radio>
             <ion-radio class="item-remove-animate" type="item-text-wrap" ng-model="paymentChoice" ng-value="'NFC'">
                 NFC
             </ion-radio>
         </ion-list>
-        <button class="button button-block button-calm" onclick="finalize()" ng-click="end()" >Pagar</button>
+        <button class="button button-block button-calm" onclick="finalize()" ng-click="end()" >Pay</button>
     </ion-content>
 
 </ion-view>
